@@ -40,3 +40,7 @@ RUN conda install --quiet --yes 'spylon-kernel=0.4*' && \
     rm -rf "/home/${NB_USER}/.local" && \
     fix-permissions "${CONDA_DIR}" && \
     fix-permissions "/home/${NB_USER}"
+    
+# Install Git Extension
+RUN pip install --upgrade jupyterlab-git && \
+    jupyter lab build
